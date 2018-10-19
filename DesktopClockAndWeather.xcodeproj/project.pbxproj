@@ -13,6 +13,7 @@
 		4F207005217865E60048215C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F207004217865E60048215C /* Assets.xcassets */; };
 		4F207008217865E60048215C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F207006217865E60048215C /* Main.storyboard */; };
 		4F58B54B21799B75001085FC /* CnWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F58B54A21799B75001085FC /* CnWeatherData.swift */; };
+		4F58B54F2179D601001085FC /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F58B54E2179D601001085FC /* PrefsViewController.swift */; };
 		72C32F9EEE596782FF820209 /* Pods_DesktopClockAndWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E107931CBC04A953004617AF /* Pods_DesktopClockAndWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		4F207009217865E60048215C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F20700A217865E60048215C /* DesktopClockAndWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DesktopClockAndWeather.entitlements; sourceTree = "<group>"; };
 		4F58B54A21799B75001085FC /* CnWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CnWeatherData.swift; sourceTree = "<group>"; };
+		4F58B54E2179D601001085FC /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 		7A38F66C6BF6EC76293F7F40 /* Pods-DesktopClockAndWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesktopClockAndWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesktopClockAndWeather/Pods-DesktopClockAndWeather.release.xcconfig"; sourceTree = "<group>"; };
 		C9A13BE836B164157EE2B393 /* Pods-DesktopClockAndWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesktopClockAndWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesktopClockAndWeather/Pods-DesktopClockAndWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		E107931CBC04A953004617AF /* Pods_DesktopClockAndWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesktopClockAndWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 			children = (
 				4F207000217865E60048215C /* AppDelegate.swift */,
 				4F207002217865E60048215C /* ViewController.swift */,
+				4F58B54E2179D601001085FC /* PrefsViewController.swift */,
 				4F207004217865E60048215C /* Assets.xcassets */,
 				4F207006217865E60048215C /* Main.storyboard */,
 				4F207009217865E60048215C /* Info.plist */,
@@ -221,6 +224,7 @@
 			files = (
 				4F143FEF21795B0F004C418F /* CnWeater.swift in Sources */,
 				4F58B54B21799B75001085FC /* CnWeatherData.swift in Sources */,
+				4F58B54F2179D601001085FC /* PrefsViewController.swift in Sources */,
 				4F207003217865E60048215C /* ViewController.swift in Sources */,
 				4F207001217865E60048215C /* AppDelegate.swift in Sources */,
 			);
