@@ -1,0 +1,6 @@
+framework module Pods_DesktopClockAndWeather {
+  umbrella header "Pods-DesktopClockAndWeather-umbrella.h"
+
+  export *
+  module * { export * }
+}
