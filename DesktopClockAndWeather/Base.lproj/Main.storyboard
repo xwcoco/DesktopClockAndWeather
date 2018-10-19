@@ -688,7 +688,7 @@
                     <window key="window" title="DesktopClockAndWeather" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="DesktopClockAndWeatherWindow" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="504" y="399" width="450" height="340"/>
+                        <rect key="contentRect" x="504" y="399" width="450" height="440"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -700,18 +700,18 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="93" y="303"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="DesktopClockAndWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="340"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="440"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="none" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-du-mDt">
-                                <rect key="frame" x="177" y="186" width="264" height="156"/>
+                                <rect key="frame" x="177" y="286" width="264" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="MWL-Ad-5oZ">
                                     <rect key="frame" x="0.0" y="0.0" width="264" height="156"/>
@@ -739,31 +739,21 @@
                                         </imageView>
                                     </subviews>
                                 </view>
-                                <font key="titleFont" metaFont="message" size="11"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="none" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="9tr-0c-b0g">
-                                <rect key="frame" x="-1" y="137" width="176" height="205"/>
+                                <rect key="frame" x="-8" y="286" width="176" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="iJq-ah-ZNI">
-                                    <rect key="frame" x="0.0" y="0.0" width="176" height="205"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="176" height="156"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eoc-oa-xPP">
-                                            <rect key="frame" x="20" y="49" width="148" height="147"/>
+                                            <rect key="frame" x="20" y="0.0" width="148" height="147"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="daycard" id="gzG-gj-Coj"/>
                                         </imageView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDJ-L3-lnd">
-                                            <rect key="frame" x="55" y="153" width="66" height="24"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="星期四" id="0po-VB-9Kl">
-                                                <font key="font" size="20" name=".AppleSystemUIFont"/>
-                                                <color key="textColor" red="0.70588235294117652" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgK-lV-NlZ">
-                                            <rect key="frame" x="30" y="44" width="116" height="117"/>
+                                            <rect key="frame" x="30" y="0.0" width="116" height="117"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" alignment="center" title="17" id="FPe-uZ-yT3">
                                                 <font key="font" size="100" name="HelveticaNeue"/>
@@ -771,27 +761,183 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4pT-iH-4rv">
+                                            <rect key="frame" x="26" y="55" width="142" height="3"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="divider_line" id="8or-Tq-i0W"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDJ-L3-lnd">
+                                            <rect key="frame" x="55" y="111" width="66" height="24"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="星期四" id="0po-VB-9Kl">
+                                                <font key="font" size="20" name=".AppleSystemUIFont"/>
+                                                <color key="textColor" red="0.70588235294117652" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                 </view>
-                                <font key="titleFont" metaFont="message" size="11"/>
+                            </box>
+                            <box autoresizesSubviews="NO" fixedFrame="YES" borderType="none" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="eWE-1M-9o6">
+                                <rect key="frame" x="-11" y="-4" width="472" height="288"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="AEC-Fo-w9q">
+                                    <rect key="frame" x="0.0" y="0.0" width="472" height="288"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jsn-Zf-UEh">
+                                            <rect key="frame" x="20" y="18" width="430" height="250"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="weathercard" id="1O9-AW-CpU"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Yo-Df-PZS">
+                                            <rect key="frame" x="206" y="201" width="85" height="48"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="郑州" id="nNm-3I-Ncf">
+                                                <font key="font" metaFont="systemHeavy" size="40"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQd-On-lmX">
+                                            <rect key="frame" x="135" y="149" width="100" height="34"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="晴" id="9Ne-Xc-5aI">
+                                                <font key="font" metaFont="system" size="28"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X3W-7y-0TJ">
+                                            <rect key="frame" x="50" y="195" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="-" id="Whe-qi-tCN">
+                                                <font key="font" metaFont="systemHeavy" size="50"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4p-oI-7vo">
+                                            <rect key="frame" x="114" y="225" width="36" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="℃" id="hRX-0Q-hxX">
+                                                <font key="font" metaFont="systemLight" size="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnk-bb-8B0">
+                                            <rect key="frame" x="335" y="207" width="96" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="更新于" id="gf1-su-n2L">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="75n-aB-K7j">
+                                            <rect key="frame" x="56" y="66" width="96" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" id="IRj-CA-5GR">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atD-yy-qWN">
+                                            <rect key="frame" x="56" y="45" width="96" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" id="xCb-lI-KZM">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmC-gC-eYi">
+                                            <rect key="frame" x="239" y="166" width="200" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="风力" id="Fkd-YB-3fD">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfK-7r-VXS">
+                                            <rect key="frame" x="169" y="84" width="270" height="24"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="运动" id="DwG-hm-93W">
+                                                <font key="font" metaFont="system" size="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4R-dH-MF0">
+                                            <rect key="frame" x="169" y="32" width="270" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" title="运动" id="WEQ-Ef-gZ9">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qrP-qU-P3O">
+                                            <rect key="frame" x="239" y="141" width="200" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="AQI" id="HVd-fZ-FKC">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V2x-Ox-TKc">
+                                            <rect key="frame" x="239" y="116" width="200" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="suggest" id="kzH-CY-SpB">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WgU-PB-P0x">
+                                            <rect key="frame" x="52" y="103" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="white_01" id="9Qc-0h-HN9"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
                             </box>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="WeatherIcon" destination="WgU-PB-P0x" id="em4-oP-ONa"/>
+                        <outlet property="aqiLabel" destination="qrP-qU-P3O" id="Rif-Ju-7It"/>
+                        <outlet property="cityLabel" destination="8Yo-Df-PZS" id="mzT-L8-SLL"/>
                         <outlet property="dateLabel" destination="rgK-lV-NlZ" id="fbR-KT-HLM"/>
                         <outlet property="dotImage" destination="Tnv-r4-5u2" id="dBo-0c-t8y"/>
+                        <outlet property="fengLabel" destination="zmC-gC-eYi" id="kra-ri-2QO"/>
+                        <outlet property="highLabel" destination="75n-aB-K7j" id="Gdp-zY-Xax"/>
+                        <outlet property="lowLabel" destination="atD-yy-qWN" id="Avd-JM-CoW"/>
+                        <outlet property="suggestLabel" destination="V2x-Ox-TKc" id="L7W-4n-ttc"/>
                         <outlet property="timeLabel" destination="uIg-D6-UOH" id="DqX-DA-3ru"/>
+                        <outlet property="typeLabel" destination="sQd-On-lmX" id="m6c-KY-tKP"/>
+                        <outlet property="updateTimeLabel" destination="nnk-bb-8B0" id="QFM-SM-cEj"/>
                         <outlet property="weekLabel" destination="XDJ-L3-lnd" id="X6V-Z4-yib"/>
+                        <outlet property="wenduLabel" destination="X3W-7y-0TJ" id="2rf-Km-jLE"/>
+                        <outlet property="yundongDetalLabel" destination="v4R-dH-MF0" id="Lb4-7Q-fTR"/>
+                        <outlet property="yundongLabel" destination="kfK-7r-VXS" id="sD0-aO-nm9"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="787"/>
+            <point key="canvasLocation" x="100" y="903"/>
         </scene>
     </scenes>
     <resources>
         <image name="clock_dot" width="20" height="100"/>
         <image name="daycard" width="148" height="147"/>
+        <image name="divider_line" width="142" height="3"/>
         <image name="timecard" width="300" height="147"/>
+        <image name="weathercard" width="430" height="250"/>
+        <image name="white_01" width="80" height="80"/>
     </resources>
 </document>
