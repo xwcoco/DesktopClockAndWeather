@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F143FEF21795B0F004C418F /* CnWeater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F143FEE21795B0F004C418F /* CnWeater.swift */; };
 		4F207001217865E60048215C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207000217865E60048215C /* AppDelegate.swift */; };
 		4F207003217865E60048215C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F207002217865E60048215C /* ViewController.swift */; };
 		4F207005217865E60048215C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F207004217865E60048215C /* Assets.xcassets */; };
 		4F207008217865E60048215C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F207006217865E60048215C /* Main.storyboard */; };
+		72C32F9EEE596782FF820209 /* Pods_DesktopClockAndWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E107931CBC04A953004617AF /* Pods_DesktopClockAndWeather.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F143FEE21795B0F004C418F /* CnWeater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CnWeater.swift; sourceTree = "<group>"; };
 		4F206FFD217865E60048215C /* DesktopClockAndWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesktopClockAndWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F207000217865E60048215C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F207002217865E60048215C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -21,6 +24,9 @@
 		4F207007217865E60048215C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F207009217865E60048215C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F20700A217865E60048215C /* DesktopClockAndWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DesktopClockAndWeather.entitlements; sourceTree = "<group>"; };
+		7A38F66C6BF6EC76293F7F40 /* Pods-DesktopClockAndWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesktopClockAndWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesktopClockAndWeather/Pods-DesktopClockAndWeather.release.xcconfig"; sourceTree = "<group>"; };
+		C9A13BE836B164157EE2B393 /* Pods-DesktopClockAndWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesktopClockAndWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesktopClockAndWeather/Pods-DesktopClockAndWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		E107931CBC04A953004617AF /* Pods_DesktopClockAndWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesktopClockAndWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,17 +34,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72C32F9EEE596782FF820209 /* Pods_DesktopClockAndWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271750AE5172BF912AF4464C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E107931CBC04A953004617AF /* Pods_DesktopClockAndWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4F206FF4217865E60048215C = {
 			isa = PBXGroup;
 			children = (
 				4F206FFF217865E60048215C /* DesktopClockAndWeather */,
 				4F206FFE217865E60048215C /* Products */,
+				72208F5643FA285CA8AA59EB /* Pods */,
+				271750AE5172BF912AF4464C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,8 +76,18 @@
 				4F207006217865E60048215C /* Main.storyboard */,
 				4F207009217865E60048215C /* Info.plist */,
 				4F20700A217865E60048215C /* DesktopClockAndWeather.entitlements */,
+				4F143FEE21795B0F004C418F /* CnWeater.swift */,
 			);
 			path = DesktopClockAndWeather;
+			sourceTree = "<group>";
+		};
+		72208F5643FA285CA8AA59EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9A13BE836B164157EE2B393 /* Pods-DesktopClockAndWeather.debug.xcconfig */,
+				7A38F66C6BF6EC76293F7F40 /* Pods-DesktopClockAndWeather.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,9 +97,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F20700D217865E60048215C /* Build configuration list for PBXNativeTarget "DesktopClockAndWeather" */;
 			buildPhases = (
+				210004C7D2C1688388BD7800 /* [CP] Check Pods Manifest.lock */,
 				4F206FF9217865E60048215C /* Sources */,
 				4F206FFA217865E60048215C /* Frameworks */,
 				4F206FFB217865E60048215C /* Resources */,
+				225C3B8E01E1C23EFA8CF7BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -95,6 +124,11 @@
 				TargetAttributes = {
 					4F206FFC217865E60048215C = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -128,11 +162,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		210004C7D2C1688388BD7800 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesktopClockAndWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		225C3B8E01E1C23EFA8CF7BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DesktopClockAndWeather/Pods-DesktopClockAndWeather-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DesktopClockAndWeather/Pods-DesktopClockAndWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4F206FF9217865E60048215C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F143FEF21795B0F004C418F /* CnWeater.swift in Sources */,
 				4F207003217865E60048215C /* ViewController.swift in Sources */,
 				4F207001217865E60048215C /* AppDelegate.swift in Sources */,
 			);
@@ -269,6 +353,7 @@
 		};
 		4F20700E217865E60048215C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9A13BE836B164157EE2B393 /* Pods-DesktopClockAndWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DesktopClockAndWeather/DesktopClockAndWeather.entitlements;
@@ -287,6 +372,7 @@
 		};
 		4F20700F217865E60048215C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A38F66C6BF6EC76293F7F40 /* Pods-DesktopClockAndWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DesktopClockAndWeather/DesktopClockAndWeather.entitlements;

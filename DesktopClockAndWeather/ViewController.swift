@@ -17,6 +17,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var dotImage: NSImageView!
     var timer: Timer? = nil
     var showDot: Bool = true
+    var cnWeather = CnWeather()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,6 +54,7 @@ class ViewController: NSViewController {
                                      repeats: true)
         timerAction()
        
+        cnWeather.getWeatherInfo()
 
     }
     
