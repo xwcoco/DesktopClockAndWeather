@@ -98,7 +98,7 @@
             <objects>
                 <viewController id="NCX-UZ-3fM" customClass="PrefsViewController" customModule="DesktopClockAndWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="RBu-TA-C3l">
-                        <rect key="frame" x="0.0" y="0.0" width="391" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="629" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rQj-6h-IHo">
@@ -216,7 +216,7 @@ Gw
                 </viewController>
                 <customObject id="O50-7r-OgI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847.5" y="695"/>
+            <point key="canvasLocation" x="966.5" y="695"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
