@@ -11,11 +11,17 @@ import Alamofire
 import SwiftyXMLParser
 
 class PrefsViewController: NSViewController {
-
+    @IBOutlet weak var testLabel: FlapLabel!
+    
+    @IBAction func OKClick(_ sender: Any) {
+        testLabel.setText(String(Num), animated: true)
+        Num = Num + 1
+    }
     @IBAction func shengChanged(_ sender: NSComboBox) {
         
     }
     @IBOutlet weak var shengCombox: NSComboBox!
+    var Num : Int = 41
     override func viewDidLoad() {
         super.viewDidLoad()
     

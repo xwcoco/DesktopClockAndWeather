@@ -207,11 +207,24 @@ Gw
 Gw
 </string>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="OKClick:" target="NCX-UZ-3fM" id="f9v-6V-SES"/>
+                                </connections>
                             </button>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4c-LE-F2M" customClass="FlapLabel" customModule="DesktopClockAndWeather" customModuleProvider="target">
+                                <rect key="frame" x="398" y="105" width="130" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="TextSize">
+                                        <integer key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="shengCombox" destination="RG9-h4-NLd" id="sat-oV-EYH"/>
+                        <outlet property="testLabel" destination="x4c-LE-F2M" id="zs5-gS-4xs"/>
                     </connections>
                 </viewController>
                 <customObject id="O50-7r-OgI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -266,7 +279,7 @@ Gw
                                             <color key="contentTintColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                                         </imageView>
                                         <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpI-SL-2gy" customClass="FlapLabel" customModule="DesktopClockAndWeather" customModuleProvider="target">
-                                            <rect key="frame" x="212" y="30" width="130" height="118"/>
+                                            <rect key="frame" x="212" y="30" width="130" height="120"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="BackColor">
@@ -281,7 +294,7 @@ Gw
                                             </userDefinedRuntimeAttributes>
                                         </customView>
                                         <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5y6-g5-Dkp" customClass="FlapLabel" customModule="DesktopClockAndWeather" customModuleProvider="target">
-                                            <rect key="frame" x="21" y="30" width="130" height="118"/>
+                                            <rect key="frame" x="21" y="30" width="130" height="120"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="BackColor">
@@ -362,19 +375,10 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X3W-7y-0TJ">
-                                            <rect key="frame" x="44" y="195" width="60" height="60"/>
+                                            <rect key="frame" x="44" y="195" width="70" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="-" id="Whe-qi-tCN">
                                                 <font key="font" metaFont="systemHeavy" size="50"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4p-oI-7vo">
-                                            <rect key="frame" x="108" y="234" width="36" height="30"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="℃" id="hRX-0Q-hxX">
-                                                <font key="font" metaFont="systemLight" size="20"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -452,6 +456,15 @@ Gw
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" placeholderString="suggest" id="kzH-CY-SpB">
                                                 <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s4p-oI-7vo">
+                                            <rect key="frame" x="118" y="234" width="36" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="℃" id="hRX-0Q-hxX">
+                                                <font key="font" metaFont="systemLight" size="20"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
