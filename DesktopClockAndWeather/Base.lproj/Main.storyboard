@@ -23,11 +23,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
-                                            <connections>
-                                                <segue destination="AmF-SK-mlb" kind="show" id="3kl-Wo-7XI"/>
-                                            </connections>
-                                        </menuItem>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -71,27 +67,6 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
-        </scene>
-        <!--Window Controller-->
-        <scene sceneID="d9T-Hd-Kdt">
-            <objects>
-                <windowController id="AmF-SK-mlb" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="TBl-NV-cBI">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <connections>
-                            <outlet property="delegate" destination="AmF-SK-mlb" id="mcJ-lw-tzv"/>
-                        </connections>
-                    </window>
-                    <connections>
-                        <segue destination="NCX-UZ-3fM" kind="relationship" relationship="window.shadowedContentViewController" id="TXT-Wn-Qzz"/>
-                    </connections>
-                </windowController>
-                <customObject id="WCF-La-J8v" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="684" y="304"/>
         </scene>
         <!--Prefs View Controller-->
         <scene sceneID="X2h-s1-rvC">
@@ -234,11 +209,11 @@ Gw
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="DesktopClockAndWeather" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="DesktopClockAndWeatherWindow" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController id="B8D-0N-5wS" customClass="MyWindowControl" customModule="DesktopClockAndWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="DesktopClockAndWeather" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="mainWindow" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="504" y="399" width="450" height="440"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
+                        <rect key="contentRect" x="528" y="376" width="450" height="440"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -279,7 +254,7 @@ Gw
                                             <color key="contentTintColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                                         </imageView>
                                         <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpI-SL-2gy" customClass="FlapLabel" customModule="DesktopClockAndWeather" customModuleProvider="target">
-                                            <rect key="frame" x="212" y="30" width="130" height="120"/>
+                                            <rect key="frame" x="212" y="25" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="BackColor">
@@ -294,7 +269,7 @@ Gw
                                             </userDefinedRuntimeAttributes>
                                         </customView>
                                         <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5y6-g5-Dkp" customClass="FlapLabel" customModule="DesktopClockAndWeather" customModuleProvider="target">
-                                            <rect key="frame" x="21" y="30" width="130" height="120"/>
+                                            <rect key="frame" x="21" y="25" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="BackColor">
@@ -452,9 +427,9 @@ Gw
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="white_01" id="9Qc-0h-HN9"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V2x-Ox-TKc">
-                                            <rect key="frame" x="157" y="128" width="365" height="17"/>
+                                            <rect key="frame" x="322" y="128" width="200" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" placeholderString="suggest" id="kzH-CY-SpB">
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="justified" placeholderString="suggest" id="kzH-CY-SpB">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
