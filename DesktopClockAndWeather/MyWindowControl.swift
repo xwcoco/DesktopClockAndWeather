@@ -20,7 +20,7 @@ class MyWindowControl : NSWindowController,NSWindowDelegate {
         
         window?.delegate = self
         
-        if let info : String = UserDefaults.standard.value(forKey: "windowpos") as! String {
+        if let info : String = UserDefaults.standard.value(forKey: "windowpos") as? String {
             let rect : NSRect = NSRectFromString(info)
             window?.setFrame(rect, display: true, animate: true)
 //            window?.frame = NSRect

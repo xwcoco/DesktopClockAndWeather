@@ -119,17 +119,53 @@ class CnWeather {
 
             
             
-            if let yundong_name = self.xml?["resp","zhishus","zhishu",8,"name"].text {
-                data.yundong_zishu = yundong_name
-            }
-            if let yundong_value = self.xml?["resp","zhishus","zhishu",8,"value"].text {
-                data.yundong_value = yundong_value
-            }
-            if let yundong_detail = self.xml?["resp","zhishus","zhishu",8,"detail"].text {
-                data.yundong_detail = yundong_detail
+//            if let yundong_name = self.xml?["resp","zhishus","zhishu",8,"name"].text {
+//                data.yundong_zishu = yundong_name
+//            }
+//            if let yundong_value = self.xml?["resp","zhishus","zhishu",8,"value"].text {
+//                data.yundong_value = yundong_value
+//            }
+//            if let yundong_detail = self.xml?["resp","zhishus","zhishu",8,"detail"].text {
+//                data.yundong_detail = yundong_detail
+//            }
+
+            data.zhishu = []
+            
+            var index : Int = 0
+            
+            if let zhishus = self.xml?["resp","zhishus","zhishu"] {
+                for item in zhishus {
+                    
+                    print(item)
+                    
+                    var zhi =  CnWeatherData.zhishu_struct()
+                    if let tmpStr = self.xml?["resp","zhishus","zhishu",index,"name"].text {
+                        zhi.name = tmpStr
+                    }
+                    
+                    index = index + 1
+//                    if let tmpStr = item.childElements[0].text {
+//                        zhi.name = tmpStr
+//                    }
+                    
+                    
+
+                    if let tmpValue = item.value.text {
+                        zhi.value = tmpValue
+                    }
+
+                    if let tmpDetail = item.detail.text {
+                        zhi.detail = tmpDetail
+                    }
+                    data.zhishu.append(zhi)
+                }
+                
             }
 
 
+            for list in data.zhishu {
+                print(list)
+            }
             
             delegate?.showWeather(data)
             

@@ -26,7 +26,7 @@ protocol FlapLabelPropertyChangedProtocol {
     
     @IBInspectable open var cornerRadius : CGFloat = 10.0
     
-    @IBInspectable var lineHeight : UInt = 6
+    @IBInspectable var lineHeight : UInt = 4
     
     open var font : NSFont?
     
@@ -118,7 +118,7 @@ protocol FlapLabelPropertyChangedProtocol {
         topView?.layer?.anchorPoint    = CGPoint(x: 0.5, y: 1.0)
         bottomView?.layer?.anchorPoint = CGPoint(x: 0.5, y: 0)
         bottomBackView?.layer?.anchorPoint = CGPoint(x: 0.5, y: 0)
-        nextView?.layer?.anchorPoint = CGPoint(x: 0.5, y: 0)
+        nextView?.layer?.anchorPoint = CGPoint(x: 0.5, y: 1)
         //        setupAnimations()
     }
     

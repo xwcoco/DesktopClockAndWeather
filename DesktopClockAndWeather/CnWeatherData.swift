@@ -30,6 +30,19 @@ open class CnWeatherData {
     open var yundong_zishu : String = ""
     open var yundong_value : String = ""
     open var yundong_detail : String = ""
+
+    public struct zhishu_struct {
+        var name : String
+        var value : String
+        var detail : String
+        
+        init() {
+            name = ""
+            value = ""
+            detail = ""
+        }
+    }
     
+    open var zhishu : [zhishu_struct] = []
     
 }

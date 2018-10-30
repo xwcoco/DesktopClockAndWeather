@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +24,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="7C0-Yi-BeA" kind="show" id="z0h-tn-A3K"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -67,6 +72,27 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="9IL-Ne-8PV">
+            <objects>
+                <windowController id="7C0-Yi-BeA" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="URn-8Q-vHG">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="461" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <connections>
+                            <outlet property="delegate" destination="7C0-Yi-BeA" id="u2G-JV-lcg"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="NCX-UZ-3fM" kind="relationship" relationship="window.shadowedContentViewController" id="m7T-ZC-65J"/>
+                    </connections>
+                </windowController>
+                <customObject id="PnO-jq-74u" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="154"/>
         </scene>
         <!--Prefs View Controller-->
         <scene sceneID="X2h-s1-rvC">
@@ -186,20 +212,15 @@ Gw
                                     <action selector="OKClick:" target="NCX-UZ-3fM" id="f9v-6V-SES"/>
                                 </connections>
                             </button>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4c-LE-F2M" customClass="FlapLabel" customModule="DesktopClockAndWeather" customModuleProvider="target">
-                                <rect key="frame" x="398" y="105" width="130" height="120"/>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Atg-1s-nJr" customClass="FlashTexts" customModule="DesktopClockAndWeather" customModuleProvider="target">
+                                <rect key="frame" x="375" y="48" width="220" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="TextSize">
-                                        <integer key="value" value="100"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </customView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="shengCombox" destination="RG9-h4-NLd" id="sat-oV-EYH"/>
-                        <outlet property="testLabel" destination="x4c-LE-F2M" id="zs5-gS-4xs"/>
+                        <outlet property="titleLabel" destination="Atg-1s-nJr" id="2Mw-WA-NJU"/>
                     </connections>
                 </viewController>
                 <customObject id="O50-7r-OgI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -211,9 +232,9 @@ Gw
             <objects>
                 <windowController id="B8D-0N-5wS" customClass="MyWindowControl" customModule="DesktopClockAndWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="DesktopClockAndWeather" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="mainWindow" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
-                        <rect key="contentRect" x="528" y="376" width="450" height="440"/>
+                        <rect key="contentRect" x="528" y="376" width="740" height="440"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -232,54 +253,34 @@ Gw
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="DesktopClockAndWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="550" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="708" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="none" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-du-mDt">
-                                <rect key="frame" x="187" y="315" width="360" height="187"/>
+                                <rect key="frame" x="187" y="315" width="540" height="187"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="MWL-Ad-5oZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="360" height="187"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="540" height="187"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L5b-zA-NhR">
-                                            <rect key="frame" x="0.0" y="0.0" width="360" height="180"/>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2r6-8I-8rb">
+                                            <rect key="frame" x="0.0" y="0.0" width="520" height="178"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="timecard" id="uSf-Jp-IxM"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="timecard" id="4Lc-Gv-FCF"/>
                                         </imageView>
-                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tnv-r4-5u2">
-                                            <rect key="frame" x="171" y="35" width="20" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="clock_dot" id="hlm-V7-9lf"/>
-                                            <color key="contentTintColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
-                                        </imageView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpI-SL-2gy" customClass="FlapLabel" customModule="DesktopClockAndWeather" customModuleProvider="target">
-                                            <rect key="frame" x="212" y="25" width="130" height="130"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BCa-3C-6Gu" customClass="FlipClockView" customModule="DesktopClockAndWeather" customModuleProvider="target">
+                                            <rect key="frame" x="9" y="11" width="500" height="129"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <wkWebViewConfiguration key="configuration">
+                                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                <wkPreferences key="preferences"/>
+                                            </wkWebViewConfiguration>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="BackColor">
-                                                    <color key="value" red="0.28073565090000002" green="0.28282290760000001" blue="0.29896523860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="TextSize">
-                                                    <integer key="value" value="100"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                    <integer key="value" value="6"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="ClockMode">
+                                                    <integer key="value" value="4"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                        </customView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5y6-g5-Dkp" customClass="FlapLabel" customModule="DesktopClockAndWeather" customModuleProvider="target">
-                                            <rect key="frame" x="21" y="25" width="130" height="130"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="BackColor">
-                                                    <color key="value" red="0.28073565090000002" green="0.28282290760000001" blue="0.29896523860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="TextSize">
-                                                    <integer key="value" value="100"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </customView>
+                                        </wkWebView>
                                     </subviews>
                                 </view>
                             </box>
@@ -295,18 +296,6 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="daycard" id="gzG-gj-Coj"/>
                                         </imageView>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="khj-Hw-rdO" customClass="FlapLabel" customModule="DesktopClockAndWeather" customModuleProvider="target">
-                                            <rect key="frame" x="25" y="9" width="130" height="120"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="BackColor">
-                                                    <color key="value" red="0.28073565090054092" green="0.28282290759667311" blue="0.29896523862135527" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="TextSize">
-                                                    <integer key="value" value="100"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </customView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDJ-L3-lnd">
                                             <rect key="frame" x="57" y="137" width="66" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -316,35 +305,39 @@ Gw
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88S-8n-QaG" customClass="FlipClockView" customModule="DesktopClockAndWeather" customModuleProvider="target">
+                                            <rect key="frame" x="7" y="8" width="166" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <wkWebViewConfiguration key="configuration">
+                                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                <wkPreferences key="preferences"/>
+                                            </wkWebViewConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="ClockMode">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </wkWebView>
                                     </subviews>
                                 </view>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="none" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="eWE-1M-9o6">
-                                <rect key="frame" x="5" y="7" width="540" height="300"/>
+                                <rect key="frame" x="5" y="7" width="700" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="AEC-Fo-w9q">
-                                    <rect key="frame" x="0.0" y="0.0" width="540" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="700" height="300"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nx7-2u-GF2">
-                                            <rect key="frame" x="0.0" y="5" width="540" height="300"/>
+                                            <rect key="frame" x="0.0" y="5" width="700" height="300"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="weathercard" id="Nso-Rg-a8A"/>
                                         </imageView>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Yo-Df-PZS">
-                                            <rect key="frame" x="169" y="207" width="227" height="48"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="郑州" id="nNm-3I-Ncf">
-                                                <font key="font" metaFont="systemHeavy" size="40"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQd-On-lmX">
-                                            <rect key="frame" x="157" y="149" width="161" height="34"/>
+                                            <rect key="frame" x="157" y="172" width="161" height="34"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="晴" id="9Ne-Xc-5aI">
-                                                <font key="font" metaFont="system" size="28"/>
+                                                <font key="font" metaFont="system" size="32"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -359,7 +352,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnk-bb-8B0">
-                                            <rect key="frame" x="426" y="207" width="96" height="17"/>
+                                            <rect key="frame" x="522" y="234" width="96" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="更新于" id="gf1-su-n2L">
                                                 <font key="font" metaFont="system"/>
@@ -386,7 +379,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmC-gC-eYi">
-                                            <rect key="frame" x="322" y="166" width="200" height="17"/>
+                                            <rect key="frame" x="396" y="189" width="200" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="风力" id="Fkd-YB-3fD">
                                                 <font key="font" metaFont="system"/>
@@ -394,26 +387,8 @@ Gw
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfK-7r-VXS">
-                                            <rect key="frame" x="157" y="101" width="365" height="24"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="运动" id="DwG-hm-93W">
-                                                <font key="font" metaFont="system" size="20"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4R-dH-MF0">
-                                            <rect key="frame" x="157" y="20" width="365" height="69"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <textFieldCell key="cell" title="运动" id="WEQ-Ef-gZ9">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qrP-qU-P3O">
-                                            <rect key="frame" x="322" y="146" width="200" height="17"/>
+                                            <rect key="frame" x="396" y="164" width="200" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="AQI" id="HVd-fZ-FKC">
                                                 <font key="font" metaFont="system"/>
@@ -427,7 +402,7 @@ Gw
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="white_01" id="9Qc-0h-HN9"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V2x-Ox-TKc">
-                                            <rect key="frame" x="322" y="128" width="200" height="17"/>
+                                            <rect key="frame" x="396" y="141" width="286" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="justified" placeholderString="suggest" id="kzH-CY-SpB">
                                                 <font key="font" metaFont="system"/>
@@ -444,6 +419,19 @@ Gw
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Yo-Df-PZS">
+                                            <rect key="frame" x="188" y="230" width="227" height="48"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="郑州" id="nNm-3I-Ncf">
+                                                <font key="font" metaFont="systemHeavy" size="40"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFv-Tr-Tj2" customClass="FlashTexts" customModule="DesktopClockAndWeather" customModuleProvider="target">
+                                            <rect key="frame" x="159" y="26" width="521" height="91"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </customView>
                                     </subviews>
                                 </view>
                             </box>
@@ -453,32 +441,26 @@ Gw
                         <outlet property="WeatherIcon" destination="WgU-PB-P0x" id="em4-oP-ONa"/>
                         <outlet property="aqiLabel" destination="qrP-qU-P3O" id="Rif-Ju-7It"/>
                         <outlet property="cityLabel" destination="8Yo-Df-PZS" id="mzT-L8-SLL"/>
-                        <outlet property="dateLabel" destination="khj-Hw-rdO" id="Z1S-xN-1am"/>
-                        <outlet property="dotImage" destination="Tnv-r4-5u2" id="dBo-0c-t8y"/>
                         <outlet property="fengLabel" destination="zmC-gC-eYi" id="kra-ri-2QO"/>
                         <outlet property="highLabel" destination="75n-aB-K7j" id="Gdp-zY-Xax"/>
-                        <outlet property="hourLabel" destination="5y6-g5-Dkp" id="2vd-ya-ZwV"/>
                         <outlet property="lowLabel" destination="atD-yy-qWN" id="Avd-JM-CoW"/>
-                        <outlet property="minuteLabel" destination="vpI-SL-2gy" id="dj8-rt-4iB"/>
                         <outlet property="suggestLabel" destination="V2x-Ox-TKc" id="L7W-4n-ttc"/>
                         <outlet property="typeLabel" destination="sQd-On-lmX" id="m6c-KY-tKP"/>
                         <outlet property="updateTimeLabel" destination="nnk-bb-8B0" id="QFM-SM-cEj"/>
                         <outlet property="weekLabel" destination="XDJ-L3-lnd" id="X6V-Z4-yib"/>
                         <outlet property="wenduLabel" destination="X3W-7y-0TJ" id="2rf-Km-jLE"/>
-                        <outlet property="yundongDetalLabel" destination="v4R-dH-MF0" id="Lb4-7Q-fTR"/>
-                        <outlet property="yundongLabel" destination="kfK-7r-VXS" id="sD0-aO-nm9"/>
+                        <outlet property="zhishuList" destination="xFv-Tr-Tj2" id="dLb-jq-MHc"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="985"/>
+            <point key="canvasLocation" x="142" y="1101"/>
         </scene>
     </scenes>
     <resources>
-        <image name="clock_dot" width="20" height="100"/>
-        <image name="daycard" width="179" height="178"/>
-        <image name="timecard" width="360" height="180"/>
-        <image name="weathercard" width="540" height="300"/>
+        <image name="daycard" width="163" height="163"/>
+        <image name="timecard" width="520" height="178"/>
+        <image name="weathercard" width="700" height="300"/>
         <image name="white_01" width="80" height="80"/>
     </resources>
 </document>

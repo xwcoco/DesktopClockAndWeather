@@ -11,11 +11,16 @@ import Alamofire
 import SwiftyXMLParser
 
 class PrefsViewController: NSViewController {
-    @IBOutlet weak var testLabel: FlapLabel!
+    
+    @IBOutlet weak var titleLabel: FlashTexts!
     
     @IBAction func OKClick(_ sender: Any) {
-        testLabel.setText(String(Num), animated: true)
-        Num = Num + 1
+        titleLabel.clear()
+        titleLabel.add(title: "运行程序", label: "可以很正常,可以很正常,可以很正常,可以很正常,可以很正常,可以很正常,可以很正常,可以很正常")
+        titleLabel.add(title: "ok", label: "test test")
+        titleLabel.beginTimer()
+//        testLabel.setText(String(Num), animated: true)
+//        Num = Num + 1
     }
     @IBAction func shengChanged(_ sender: NSComboBox) {
         

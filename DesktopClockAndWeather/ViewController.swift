@@ -26,10 +26,9 @@ class ViewController: NSViewController {
     @IBOutlet weak var typeLabel: NSTextField!
     @IBOutlet weak var aqiLabel: NSTextField!
     @IBOutlet weak var suggestLabel: NSTextField!
-    @IBOutlet weak var yundongLabel: NSTextField!
-    @IBOutlet weak var yundongDetalLabel: NSTextField!
     @IBOutlet weak var highLabel: NSTextField!
     @IBOutlet weak var lowLabel: NSTextField!
+    @IBOutlet weak var zhishuList: FlashTexts!
     
     @IBOutlet weak var WeatherIcon: NSImageView!
     
@@ -45,12 +44,12 @@ class ViewController: NSViewController {
         self.updateDateAndWeek()
         
        
-        timer = Timer.scheduledTimer(timeInterval: 1,
-                                     target: self,
-                                     selector: #selector(timerAction),
-                                     userInfo: nil,
-                                     repeats: true)
-        timerAction()
+//        timer = Timer.scheduledTimer(timeInterval: 1,
+//                                     target: self,
+//                                     selector: #selector(timerAction),
+//                                     userInfo: nil,
+//                                     repeats: true)
+//        timerAction()
         
         cnWeather.delegate = self
        
@@ -60,27 +59,27 @@ class ViewController: NSViewController {
     }
     
     @objc dynamic func timerAction() {
-        if self.showDot {
-            self.dotImage.isHidden = true
-            self.showDot = false
-        } else {
-            self.dotImage.isHidden = false
-            self.showDot = true
-        }
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH"
-        self.hourLabel.setText(dateFormatter.string(from: currentDate), animated: true)
-        dateFormatter.dateFormat = "mm"
-        self.minuteLabel.setText(dateFormatter.string(from: currentDate), animated: true)
-//        self.timeLabel.setText(dateFormatter.string(from: currentDate), animated: true)
-//        self.timeLabel.stringValue = dateFormatter.string(from: currentDate)
-        
-        let calendar = NSCalendar.current
-        let day = calendar.component(.day, from: currentDate)
-        if (day != self.oldDay) {
-            self.updateDateAndWeek()
-        }
+//        if self.showDot {
+//            self.dotImage.isHidden = true
+//            self.showDot = false
+//        } else {
+//            self.dotImage.isHidden = false
+//            self.showDot = true
+//        }
+//        let currentDate = Date()
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "HH"
+//        self.hourLabel.setText(dateFormatter.string(from: currentDate), animated: true)
+//        dateFormatter.dateFormat = "mm"
+//        self.minuteLabel.setText(dateFormatter.string(from: currentDate), animated: true)
+////        self.timeLabel.setText(dateFormatter.string(from: currentDate), animated: true)
+////        self.timeLabel.stringValue = dateFormatter.string(from: currentDate)
+//
+//        let calendar = NSCalendar.current
+//        let day = calendar.component(.day, from: currentDate)
+//        if (day != self.oldDay) {
+//            self.updateDateAndWeek()
+//        }
 
     }
     
@@ -177,7 +176,7 @@ class ViewController: NSViewController {
         
         let weeks:[String] = ["星期天","星期一","星期二","星期三","星期四","星期五","星期六"]
         self.weekLabel.stringValue = weeks[weekday-1]
-        dateLabel.setText(String(day), animated: true)
+//        dateLabel.setText(String(day), animated: true)
 //        self.dateLabel.stringValue = String(day)
         self.oldDay = day
     }
@@ -202,11 +201,17 @@ extension ViewController: CnWeatherProtocol {
         self.fengLabel.stringValue = data.fengxiang + " " + data.fengli + "   湿度:" + data.shidu
         self.aqiLabel.stringValue = data.aqi + "  " + data.quality + "     PM2.5  " + data.pm25
         self.suggestLabel.stringValue = data.suggest
-        self.yundongLabel.stringValue = data.yundong_zishu + "  " + data.yundong_value
-        self.yundongDetalLabel.stringValue = data.yundong_detail
+//        self.yundongLabel.stringValue = data.yundong_zishu + "  " + data.yundong_value
+//        self.yundongDetalLabel.stringValue = data.yundong_detail
         self.highLabel.stringValue = data.high
         self.lowLabel.stringValue = data.low
         self.updateWeatherIcon(data: data)
+        
+        self.zhishuList.clear()
+        for item in data.zhishu {
+            self.zhishuList.add(title: item.name + "   " + item.value, label: item.detail)
+        }
+        self.zhishuList.beginTimer()
     }
     
     
