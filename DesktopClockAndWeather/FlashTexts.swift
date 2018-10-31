@@ -28,6 +28,7 @@ class FlashTexts: NSView {
         let view  : TitleLabel = TitleLabel(frame: self.bounds)
         view.setText(title: Title, label: text)
         view.alphaValue = 0
+//        view.needsLayout = true
         self.addSubview(view)
     }
     

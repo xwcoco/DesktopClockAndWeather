@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -329,21 +329,21 @@ Gw
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nx7-2u-GF2">
-                                            <rect key="frame" x="0.0" y="5" width="700" height="300"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="700" height="300"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="weathercard" id="Nso-Rg-a8A"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQd-On-lmX">
-                                            <rect key="frame" x="157" y="172" width="161" height="34"/>
+                                            <rect key="frame" x="157" y="155" width="161" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="晴" id="9Ne-Xc-5aI">
-                                                <font key="font" metaFont="system" size="32"/>
+                                                <font key="font" metaFont="system" size="36"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X3W-7y-0TJ">
-                                            <rect key="frame" x="44" y="195" width="70" height="60"/>
+                                            <rect key="frame" x="44" y="204" width="70" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="-" id="Whe-qi-tCN">
                                                 <font key="font" metaFont="systemHeavy" size="50"/>
@@ -379,7 +379,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmC-gC-eYi">
-                                            <rect key="frame" x="396" y="189" width="200" height="17"/>
+                                            <rect key="frame" x="337" y="189" width="340" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="风力" id="Fkd-YB-3fD">
                                                 <font key="font" metaFont="system"/>
@@ -388,7 +388,7 @@ Gw
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qrP-qU-P3O">
-                                            <rect key="frame" x="396" y="164" width="200" height="17"/>
+                                            <rect key="frame" x="337" y="167" width="340" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="AQI" id="HVd-fZ-FKC">
                                                 <font key="font" metaFont="system"/>
@@ -402,7 +402,7 @@ Gw
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="white_01" id="9Qc-0h-HN9"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V2x-Ox-TKc">
-                                            <rect key="frame" x="396" y="141" width="286" height="17"/>
+                                            <rect key="frame" x="337" y="145" width="340" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="justified" placeholderString="suggest" id="kzH-CY-SpB">
                                                 <font key="font" metaFont="system"/>
@@ -428,7 +428,7 @@ Gw
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFv-Tr-Tj2" customClass="FlashTexts" customModule="DesktopClockAndWeather" customModuleProvider="target">
+                                        <customView autoresizesSubviews="NO" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFv-Tr-Tj2" customClass="FlashTexts" customModule="DesktopClockAndWeather" customModuleProvider="target">
                                             <rect key="frame" x="159" y="26" width="521" height="91"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </customView>

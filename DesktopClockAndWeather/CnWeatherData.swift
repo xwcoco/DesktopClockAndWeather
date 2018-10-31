@@ -26,6 +26,7 @@ open class CnWeatherData {
     open var pm25 : String = ""
     open var suggest : String = ""
     open var quality : String = ""
+    open var pm10 : String = ""
     
     open var yundong_zishu : String = ""
     open var yundong_value : String = ""

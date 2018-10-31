@@ -83,6 +83,11 @@ class CnWeather {
             if let pm25 = self.xml?["resp","environment","pm25"].text {
                 data.pm25 = pm25
             }
+            
+            if let pm10 = self.xml?["resp","environment","pm10"].text {
+                data.pm10 = pm10
+            }
+            
             if let suggest = self.xml?["resp","environment","suggest"].text {
                 data.suggest = suggest
             }
@@ -167,6 +172,7 @@ class CnWeather {
                 print(list)
             }
             
+            print("update weather...")
             delegate?.showWeather(data)
             
         }

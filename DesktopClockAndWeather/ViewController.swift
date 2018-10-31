@@ -191,6 +191,21 @@ class ViewController: NSViewController {
 }
 
 extension ViewController: CnWeatherProtocol {
+    
+    func getAQIColor(_ aqi : Int) -> NSColor {
+        if (aqi < 50) {
+            return NSColor.green
+        }
+        if (aqi < 100) {
+            return NSColor.yellow
+        }
+        if (aqi < 200) {
+            return NSColor.orange
+        }
+        return NSColor.red
+        
+    }
+    
     func showWeather(_ data: CnWeatherData) {
         print(data.fengli)
         self.cityLabel.stringValue = data.City
@@ -199,7 +214,67 @@ extension ViewController: CnWeatherProtocol {
         self.typeLabel.stringValue = data.dayType
         
         self.fengLabel.stringValue = data.fengxiang + " " + data.fengli + "   湿度:" + data.shidu
-        self.aqiLabel.stringValue = data.aqi + "  " + data.quality + "     PM2.5  " + data.pm25
+        
+//        let str : String = data.aqi + "  " + data.quality + "     PM2.5  " + data.pm25 + "  PM10  " + data.pm10
+        var str : String = "AQI:  "
+        
+        var nsStr : NSString = NSString(string: str)
+        
+        let aqiStart : Int = nsStr.length //strlen(str)
+        
+        
+        str = str + data.aqi
+//        let aqiEnd : Int = strlen(str)
+
+        nsStr = NSString(string: str)
+        let aqiEnd = nsStr.length
+        
+        
+        str = str + "  " + data.quality + "     PM2.5 : "
+        
+        nsStr = NSString(string: str)
+        
+        let pm25Start : Int = nsStr.length
+//        let pm25Start : Int = strlen(str)
+
+        str = str + data.pm25
+        nsStr = NSString(string: str)
+
+        let pm25End : Int = nsStr.length //strlen(str)
+
+        str = str + "    PM10 : "
+        nsStr = NSString(string: str)
+
+        let pm10Start : Int = nsStr.length //strlen(str)
+
+        str = str + data.pm10
+        nsStr = NSString(string: str)
+
+        let pm10End : Int = nsStr.length//strlen(str)
+
+        str = str + "  "
+//
+        let strColor : NSMutableAttributedString = NSMutableAttributedString(string: str)
+//
+        let aqiColor = self.getAQIColor(Int(data.aqi)!)
+//
+        strColor.addAttributes([NSAttributedString.Key.foregroundColor : aqiColor], range: NSRange(location: aqiStart, length: aqiEnd - aqiStart))
+//
+        let pm25Color = self.getAQIColor(Int(data.pm25)!)
+        strColor.addAttributes([NSAttributedString.Key.foregroundColor : pm25Color], range: NSRange(location: pm25Start, length: pm25End - pm25Start))
+//
+        let pm10Color = self.getAQIColor(Int(data.pm10)!)
+        
+        strColor.addAttributes([NSAttributedString.Key.foregroundColor : pm10Color], range: NSRange(location: pm10Start, length: pm10End - pm10Start))
+
+
+//            + data.aqi + "  <font color = 'white'>" + data.quality + "     PM2.5  " + data.pm25 + "  PM10  " + data.pm10
+        
+
+//        let strColor : NSAttributedString = NSAttributedString(html: Data(str.utf8)!, documentAttributes: nil)!
+        
+        self.aqiLabel.attributedStringValue = strColor
+//        self.aqiLabel.stringValue = str
         self.suggestLabel.stringValue = data.suggest
 //        self.yundongLabel.stringValue = data.yundong_zishu + "  " + data.yundong_value
 //        self.yundongDetalLabel.stringValue = data.yundong_detail

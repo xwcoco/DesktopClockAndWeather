@@ -27,12 +27,13 @@ class TitleLabel: NSView {
     
     private func initLables() {
         self.backgroundColor = NSColor.clear
+        self.autoresizesSubviews = false;
         
 //        self.isOpaque = false
         
         title.isEditable = false
         title.isSelectable = false
-        title.backgroundColor = NSColor.black
+        title.backgroundColor = NSColor.blue
         title.textColor = NSColor.white
         title.drawsBackground = false
         
@@ -41,9 +42,10 @@ class TitleLabel: NSView {
         
         label.isEditable = false
         label.isSelectable = false
-        label.backgroundColor = NSColor.black
+        label.backgroundColor = NSColor.green
         label.textColor = NSColor.white
         label.font = NSFont(name: "Monaco", size: CGFloat(self.LabelFontSize))
+//        label.setAlignment(NSTextAlignment., range: <#T##NSRange#>)
 
         label.drawsBackground = false
        
@@ -65,6 +67,27 @@ class TitleLabel: NSView {
         
         self.title.frame = titleFrame
         self.label.frame = labelFrame
+
+//        print("layout...")
+////        print(titleFrame)
+//        print(title.bounds)
+//
+////        self.title.setBoundsOrigin(NSPoint(x: 0, y: bounds.height * 2 / 3))
+//        self.title.setBoundsSize(NSSize(width: bounds.width, height: bounds.height / 3))
+//
+////        print(titleFrame)
+//        print(title.bounds)
+//
+//        self.label.setBoundsSize(NSSize(width: bounds.width, height: bounds.height * 2 / 3))
+//        self.label.setBoundsOrigin(NSPoint(x: 0, y: 0))
+        
+//        self.label.frame.origin.y = 0
+//        self.title.frame.origin.y = bounds.height * 2 / 3
+//        self.label.setBoundsOrigin(NSPoint(x: 0, y: 0))
+//        self.title.setBoundsOrigin(NSPoint(x: 0, y: bounds.height * 2 / 3))
+//        print("layout...")
+//        print(self.frame)
+//        print(labelFrame)
     }
     
     public func setText(title titleString : String,label text : String) -> Void {
