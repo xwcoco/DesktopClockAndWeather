@@ -13,11 +13,10 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var weekLabel: NSTextField!
     
-    @IBOutlet weak var minuteLabel: FlapLabel!
-    @IBOutlet weak var hourLabel: FlapLabel!
     
-    @IBOutlet weak var dateLabel: FlapLabel!
+    @IBOutlet weak var dateLabel: MultiFlipLabel!
     
+    @IBOutlet weak var timeLabel: MultiFlipLabel!
     @IBOutlet weak var dotImage: NSImageView!
     @IBOutlet weak var cityLabel: NSTextField!
     @IBOutlet weak var updateTimeLabel: NSTextField!
@@ -44,12 +43,12 @@ class ViewController: NSViewController {
         self.updateDateAndWeek()
         
        
-//        timer = Timer.scheduledTimer(timeInterval: 1,
-//                                     target: self,
-//                                     selector: #selector(timerAction),
-//                                     userInfo: nil,
-//                                     repeats: true)
-//        timerAction()
+        timer = Timer.scheduledTimer(timeInterval: 1,
+                                     target: self,
+                                     selector: #selector(timerAction),
+                                     userInfo: nil,
+                                     repeats: true)
+        timerAction()
         
         cnWeather.delegate = self
        
@@ -66,20 +65,20 @@ class ViewController: NSViewController {
 //            self.dotImage.isHidden = false
 //            self.showDot = true
 //        }
-//        let currentDate = Date()
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "HH"
-//        self.hourLabel.setText(dateFormatter.string(from: currentDate), animated: true)
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+        self.timeLabel.setText(dateFormatter.string(from: currentDate), animated: true)
 //        dateFormatter.dateFormat = "mm"
 //        self.minuteLabel.setText(dateFormatter.string(from: currentDate), animated: true)
 ////        self.timeLabel.setText(dateFormatter.string(from: currentDate), animated: true)
 ////        self.timeLabel.stringValue = dateFormatter.string(from: currentDate)
 //
-//        let calendar = NSCalendar.current
-//        let day = calendar.component(.day, from: currentDate)
-//        if (day != self.oldDay) {
-//            self.updateDateAndWeek()
-//        }
+        let calendar = NSCalendar.current
+        let day = calendar.component(.day, from: currentDate)
+        if (day != self.oldDay) {
+            self.updateDateAndWeek()
+        }
 
     }
     
@@ -176,7 +175,7 @@ class ViewController: NSViewController {
         
         let weeks:[String] = ["星期天","星期一","星期二","星期三","星期四","星期五","星期六"]
         self.weekLabel.stringValue = weeks[weekday-1]
-//        dateLabel.setText(String(day), animated: true)
+        dateLabel.setText(String(day), animated: true)
 //        self.dateLabel.stringValue = String(day)
         self.oldDay = day
     }

@@ -14,7 +14,6 @@
 		4F207005217865E60048215C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F207004217865E60048215C /* Assets.xcassets */; };
 		4F207008217865E60048215C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F207006217865E60048215C /* Main.storyboard */; };
 		4F223BB72188560600F4CD42 /* FlashTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F223BB62188560600F4CD42 /* FlashTexts.swift */; };
-		4F396893217CBDD100725DDA /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F396891217CBDD100725DDA /* TileView.swift */; };
 		4F396894217CBDD100725DDA /* FlapLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F396892217CBDD100725DDA /* FlapLabel.swift */; };
 		4F396896217CD02800725DDA /* CHWMarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F396895217CD02800725DDA /* CHWMarqueeView.swift */; };
 		4F42021B2188458F00EE6830 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F42021A2188458F00EE6830 /* TitleLabel.swift */; };
@@ -39,7 +38,6 @@
 		4F207009217865E60048215C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F20700A217865E60048215C /* DesktopClockAndWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DesktopClockAndWeather.entitlements; sourceTree = "<group>"; };
 		4F223BB62188560600F4CD42 /* FlashTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashTexts.swift; sourceTree = "<group>"; };
-		4F396891217CBDD100725DDA /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		4F396892217CBDD100725DDA /* FlapLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlapLabel.swift; sourceTree = "<group>"; };
 		4F396895217CD02800725DDA /* CHWMarqueeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHWMarqueeView.swift; sourceTree = "<group>"; };
 		4F42021A2188458F00EE6830 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 			children = (
 				4F87E5CB2186CF7900CA7060 /* WebView */,
 				4F396892217CBDD100725DDA /* FlapLabel.swift */,
-				4F396891217CBDD100725DDA /* TileView.swift */,
 				4F207000217865E60048215C /* AppDelegate.swift */,
 				4F207002217865E60048215C /* ViewController.swift */,
 				4F58B54E2179D601001085FC /* PrefsViewController.swift */,
@@ -276,7 +273,6 @@
 				4F87E5D32186D44900CA7060 /* FlipClockView.swift in Sources */,
 				4F207003217865E60048215C /* ViewController.swift in Sources */,
 				4F396896217CD02800725DDA /* CHWMarqueeView.swift in Sources */,
-				4F396893217CBDD100725DDA /* TileView.swift in Sources */,
 				4F207001217865E60048215C /* AppDelegate.swift in Sources */,
 				4F396894217CBDD100725DDA /* FlapLabel.swift in Sources */,
 			);

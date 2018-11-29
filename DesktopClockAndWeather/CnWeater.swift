@@ -141,7 +141,7 @@ class CnWeather {
             if let zhishus = self.xml?["resp","zhishus","zhishu"] {
                 for item in zhishus {
                     
-                    print(item)
+//                    print(item)
                     
                     var zhi =  CnWeatherData.zhishu_struct()
                     if let tmpStr = self.xml?["resp","zhishus","zhishu",index,"name"].text {

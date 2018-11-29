@@ -30,9 +30,23 @@ class FlipClockView: WKWebView,WKNavigationDelegate {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.navigationDelegate = self
+        self.configuration.preferences.plugInsEnabled = false
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+        webView.backgroundColor = NSColor.clear
+        
+//        webView.enclosingScrollView
+        
+//        for subView in webView.subviews {
+//            print(subView)
+////            if let view : NSScrollView = subView as? NSScrollView {
+////                view.hasHorizontalScroller = false
+////                view.hasVerticalScroller = false
+////            }
+//        }
+        
         let string : String = "SetClockMode(" + String(ClockMode) + ")"
         print(string)
         self.evaluateJavaScript(string, completionHandler: { (any, error) in

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -87,12 +86,31 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="NCX-UZ-3fM" kind="relationship" relationship="window.shadowedContentViewController" id="m7T-ZC-65J"/>
+                        <segue destination="XU5-Ym-gAn" kind="relationship" relationship="window.shadowedContentViewController" id="kCP-tZ-OSJ"/>
                     </connections>
                 </windowController>
                 <customObject id="PnO-jq-74u" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="826" y="154"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9jY-Mz-yZq">
+            <objects>
+                <viewController id="XU5-Ym-gAn" sceneMemberID="viewController">
+                    <view key="view" id="QUi-Pp-h97">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qGW-wy-o8t" customClass="FlipClockView" customModule="DesktopClockAndWeather" customModuleProvider="target">
+                                <rect key="frame" x="82" y="91" width="255" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="wmj-Pz-euR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1439" y="139"/>
         </scene>
         <!--Prefs View Controller-->
         <scene sceneID="X2h-s1-rvC">
@@ -212,20 +230,19 @@ Gw
                                     <action selector="OKClick:" target="NCX-UZ-3fM" id="f9v-6V-SES"/>
                                 </connections>
                             </button>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Atg-1s-nJr" customClass="FlashTexts" customModule="DesktopClockAndWeather" customModuleProvider="target">
-                                <rect key="frame" x="375" y="48" width="220" height="176"/>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6OJ-DR-3SZ" customClass="FlipClockView" customModule="DesktopClockAndWeather" customModuleProvider="target">
+                                <rect key="frame" x="378" y="114" width="191" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </customView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="shengCombox" destination="RG9-h4-NLd" id="sat-oV-EYH"/>
-                        <outlet property="titleLabel" destination="Atg-1s-nJr" id="2Mw-WA-NJU"/>
                     </connections>
                 </viewController>
                 <customObject id="O50-7r-OgI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966.5" y="695"/>
+            <point key="canvasLocation" x="1111" y="542"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -268,27 +285,14 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="timecard" id="4Lc-Gv-FCF"/>
                                         </imageView>
-                                        <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BCa-3C-6Gu" customClass="FlipClockView" customModule="DesktopClockAndWeather" customModuleProvider="target">
-                                            <rect key="frame" x="9" y="11" width="500" height="129"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <wkWebViewConfiguration key="configuration">
-                                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                                <wkPreferences key="preferences"/>
-                                            </wkWebViewConfiguration>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="ClockMode">
-                                                    <integer key="value" value="4"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </wkWebView>
                                     </subviews>
                                 </view>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" borderType="none" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="9tr-0c-b0g">
-                                <rect key="frame" x="5" y="315" width="180" height="180"/>
+                                <rect key="frame" x="5" y="315" width="706" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="iJq-ah-ZNI">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="706" height="180"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eoc-oa-xPP">
@@ -305,19 +309,26 @@ Gw
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88S-8n-QaG" customClass="FlipClockView" customModule="DesktopClockAndWeather" customModuleProvider="target">
-                                            <rect key="frame" x="7" y="8" width="166" height="130"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <wkWebViewConfiguration key="configuration">
-                                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                                <wkPreferences key="preferences"/>
-                                            </wkWebViewConfiguration>
+                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y5A-GI-lQM" customClass="MultiFlipLabel" customModule="DesktopClockAndWeather" customModuleProvider="target">
+                                            <rect key="frame" x="15" y="33" width="149" height="96"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="ClockMode">
-                                                    <integer key="value" value="3"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="Text" value="29"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                                    <integer key="value" value="100"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                        </wkWebView>
+                                        </customView>
+                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cq-Uj-muZ" customClass="MultiFlipLabel" customModule="DesktopClockAndWeather" customModuleProvider="target">
+                                            <rect key="frame" x="194" y="33" width="492" height="96"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="Text" value="12:00:35"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="FontSize">
+                                                    <integer key="value" value="100"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </customView>
                                     </subviews>
                                 </view>
                             </box>
@@ -441,10 +452,12 @@ Gw
                         <outlet property="WeatherIcon" destination="WgU-PB-P0x" id="em4-oP-ONa"/>
                         <outlet property="aqiLabel" destination="qrP-qU-P3O" id="Rif-Ju-7It"/>
                         <outlet property="cityLabel" destination="8Yo-Df-PZS" id="mzT-L8-SLL"/>
+                        <outlet property="dateLabel" destination="Y5A-GI-lQM" id="Yla-Du-8RW"/>
                         <outlet property="fengLabel" destination="zmC-gC-eYi" id="kra-ri-2QO"/>
                         <outlet property="highLabel" destination="75n-aB-K7j" id="Gdp-zY-Xax"/>
                         <outlet property="lowLabel" destination="atD-yy-qWN" id="Avd-JM-CoW"/>
                         <outlet property="suggestLabel" destination="V2x-Ox-TKc" id="L7W-4n-ttc"/>
+                        <outlet property="timeLabel" destination="8cq-Uj-muZ" id="m5p-ZW-HWY"/>
                         <outlet property="typeLabel" destination="sQd-On-lmX" id="m6c-KY-tKP"/>
                         <outlet property="updateTimeLabel" destination="nnk-bb-8B0" id="QFM-SM-cEj"/>
                         <outlet property="weekLabel" destination="XDJ-L3-lnd" id="X6V-Z4-yib"/>
