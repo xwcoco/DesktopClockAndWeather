@@ -267,6 +267,10 @@ class FlipLabel: NSView, CAAnimationDelegate {
         topHalfFrontView = list.firstObject as? NSView
         bottomHalfFrontView = list.lastObject as? NSView
         
+        if (topHalfFrontView == nil || bottomHalfFrontView == nil) {
+            return
+        }
+        
         //        topHalfFrontView?.frame = topHalfFrontView!.frame.offsetBy(dx: self.frame.origin.x, dy: self.frame.origin.y)
         self.addSubview(topHalfFrontView!)
         
@@ -276,6 +280,10 @@ class FlipLabel: NSView, CAAnimationDelegate {
         self.addSubview(bottomHalfFrontView!)
         
         self.currentView.removeFromSuperview()
+        
+        if (self.nextView == nil) {
+            return
+        }
         
         let backviews = self.snapshotsForView(self.nextView!)
         //        self.topHalfBackView = backviews.firstObject as? NSView
@@ -337,7 +345,9 @@ class FlipLabel: NSView, CAAnimationDelegate {
             break
         case .kFlipAnimationTopDown:
             self.topHalfBackView?.removeFromSuperview()
-            self.addSubview(self.topHalfBackView!)
+            if (self.topHalfBackView != nil) {
+                self.addSubview(self.topHalfBackView!)
+            }
             self.animationState = .kFlipAnimationBottomDown
             break
         default:

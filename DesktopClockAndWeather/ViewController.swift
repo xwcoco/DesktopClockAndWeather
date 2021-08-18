@@ -201,6 +201,8 @@ extension ViewController: CnWeatherProtocol {
         if (aqi < 200) {
             return NSColor.orange
         }
+        
+        
         return NSColor.red
         
     }
@@ -254,15 +256,34 @@ extension ViewController: CnWeatherProtocol {
         str = str + "  "
 //
         let strColor : NSMutableAttributedString = NSMutableAttributedString(string: str)
+        
+        var aqiValue = 0
+        
+        if (data.aqi != "") {
+            aqiValue = Int(data.aqi)!
+        }
+        
+        
 //
-        let aqiColor = self.getAQIColor(Int(data.aqi)!)
+        let aqiColor = self.getAQIColor(aqiValue)
 //
         strColor.addAttributes([NSAttributedString.Key.foregroundColor : aqiColor], range: NSRange(location: aqiStart, length: aqiEnd - aqiStart))
 //
-        let pm25Color = self.getAQIColor(Int(data.pm25)!)
+        var pm25Value = 0
+        
+        if (data.pm25 != "") {
+            pm25Value = Int(data.pm25)!
+        }
+            
+        
+        let pm25Color = self.getAQIColor(pm25Value)
         strColor.addAttributes([NSAttributedString.Key.foregroundColor : pm25Color], range: NSRange(location: pm25Start, length: pm25End - pm25Start))
 //
-        let pm10Color = self.getAQIColor(Int(data.pm10)!)
+        var pm10Value = 0
+        if (data.pm10 != "") {
+            pm10Value = Int(data.pm10)!
+        }
+        let pm10Color = self.getAQIColor(pm10Value)
         
         strColor.addAttributes([NSAttributedString.Key.foregroundColor : pm10Color], range: NSRange(location: pm10Start, length: pm10End - pm10Start))
 

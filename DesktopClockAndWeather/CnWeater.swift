@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyXMLParser
+import SwiftyJSON
 
 
 protocol CnWeatherProtocol {
@@ -20,6 +21,8 @@ class CnWeather {
     var xml : XML.Accessor? = nil
     
     var delegate: CnWeatherProtocol?
+    
+    var data :  CnWeatherData = CnWeatherData()
     
     func beginTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1800,
@@ -50,12 +53,43 @@ class CnWeather {
             }
        
         }
+        
+        let aqiUrl = "https://free-api.heweather.net/s6/air/now?location=zhengzhou&key=70decfbc6d084d0b9e0d30f33dc54135"
+        
+        Alamofire.request(aqiUrl).responseJSON { resp in
+            print("aqi ok")
+            
+            let json = JSON(resp.data)
+            if let aqidata = json["HeWeather6"][0]["air_now_city"]["aqi"].string {
+                self.data.aqi = aqidata
+            }
+            
+            if let pm10data = json["HeWeather6"][0]["air_now_city"]["pm10"].string {
+                self.data.pm10 = pm10data
+            }
+            
+            if let pm25data = json["HeWeather6"][0]["air_now_city"]["pm25"].string {
+                self.data.pm25 = pm25data
+            }
+            
+            if let qltydata = json["HeWeather6"][0]["air_now_city"]["qlty"].string {
+                self.data.quality = qltydata
+            }
+            if let updatedata = json["HeWeather6"][0]["air_now_city"]["pub_time"].string {
+                self.data.suggest = updatedata
+            }
+
+            
+            
+            self.delegate?.showWeather(self.data)
+
+        }
     }
     
     func getWeatherData() {
         if (self.xml != nil) {
             print("xmlok")
-            let data = CnWeatherData()
+//            let data = CnWeatherData()
             
             if let city = self.xml?["resp","city"].text {
                 data.City = city
@@ -77,25 +111,25 @@ class CnWeather {
                 data.fengxiang = fengxiang
             }
             
-            if let aqi = self.xml?["resp","environment","aqi"].text {
-                data.aqi = aqi
-            }
-            if let pm25 = self.xml?["resp","environment","pm25"].text {
-                data.pm25 = pm25
-            }
-            
-            if let pm10 = self.xml?["resp","environment","pm10"].text {
-                data.pm10 = pm10
-            }
-            
-            if let suggest = self.xml?["resp","environment","suggest"].text {
-                data.suggest = suggest
-            }
-            
-            if let quality = self.xml?["resp","environment","quality"].text {
-                data.quality = quality
-            }
-            
+//            if let aqi = self.xml?["resp","environment","aqi"].text {
+//                data.aqi = aqi
+//            }
+//            if let pm25 = self.xml?["resp","environment","pm25"].text {
+//                data.pm25 = pm25
+//            }
+//
+//            if let pm10 = self.xml?["resp","environment","pm10"].text {
+//                data.pm10 = pm10
+//            }
+//
+//            if let suggest = self.xml?["resp","environment","suggest"].text {
+//                data.suggest = suggest
+//            }
+//
+//            if let quality = self.xml?["resp","environment","quality"].text {
+//                data.quality = quality
+//            }
+//
             
             
             if let dayType = self.xml?["resp","forecast","weather",0,"day","type"].text {
