@@ -175,7 +175,7 @@ class ViewController: NSViewController {
         
         let weeks:[String] = ["星期天","星期一","星期二","星期三","星期四","星期五","星期六"]
         self.weekLabel.stringValue = weeks[weekday-1]
-        dateLabel.setText(String(day), animated: true)
+        dateLabel.setText(getTwoDays(day), animated: true)
 //        self.dateLabel.stringValue = String(day)
         self.oldDay = day
     }
@@ -186,6 +186,13 @@ class ViewController: NSViewController {
             
             
         }
+    }
+    
+    func getTwoDays(_ day : Int) -> String {
+        if (day >= 10) {
+            return String(day)
+        }
+        return "0"+String(day)
     }
 }
 
